@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  tests:
+    build:
+      context: .
+      dockerfile: Dockerfile-tests
+    depends_on:
+      - mongo
+    environment:
+      - SPRING_DATA_MONGODB_URI=mongodb://mongo:27017/test
+    command: /app/gradlew build test
+
+  mongo:
+    image: mongo:latest
+    command: "--smallfiles"

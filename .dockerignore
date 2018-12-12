@@ -1,0 +1,7 @@
+# .dockerignore
+.git
+Dockerfile
+Dockerfile-tests
+
+#builds
+app/build/
