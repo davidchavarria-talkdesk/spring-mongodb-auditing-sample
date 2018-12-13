@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.core.mapping.Document
 import org.springframework.data.mongodb.core.mapping.Field
 import java.time.Instant
 
-@Document("auditing_model")
+@Document(collection = "auditing_model")
 data class AuditingModel(
 
     @Field("model_id")
@@ -19,5 +19,5 @@ data class AuditingModel(
     @Field("updated_at")
     val updatedAt: Instant = Instant.now(),
 
-    @Id private var id: String? = null
+    @Id private val id: String? = null
 )
